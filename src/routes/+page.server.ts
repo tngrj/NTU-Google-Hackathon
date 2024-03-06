@@ -14,15 +14,17 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
-	searchJobs: async ({ request, params }) => {
+	searchJobs: async ({ request }) => {
 		const data = await request.formData();
 		const jobTitle = data.get('jobTitle');
 		const file = data.get('files');
 
-		console.log('jobTitle:', jobTitle);
-		console.log('file:', file);
+		// console.log('jobTitle:', jobTitle);
+		// console.log('file:', file);
 
-		generateContent(jobTitle, file);
+		const response = await generateContent(jobTitle, file);
+		// console.log('response:', response);
+		return { success: true, data: response };
 	},
 	signOut: async (event) => {
 		if (!event.locals.session) {

@@ -61,7 +61,7 @@ export async function generateContent(jobTitle, file) {
 				role: 'user',
 				parts: [
 					{
-						text: `Given my resume ${combinedText} and my current job title as ${jobTitle}, can u recommend other jobs that I can apply for? Please give it in point form`
+						text: `Given my resume ${combinedText} and my current job title as ${jobTitle}, can u recommend other 8 jobs that I can apply for? Just list out the jobs without a header or numeric, seperate each job using a comma only. `
 					}
 				]
 			}
@@ -80,5 +80,5 @@ export async function generateContent(jobTitle, file) {
 		}
 	}
 
-	console.log('Response text:', responseText);
+	return responseText;
 }
