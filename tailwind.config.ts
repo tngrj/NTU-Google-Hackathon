@@ -17,7 +17,7 @@ export default {
 		forms,
 		typography,
 		skeleton({
-			themes: { preset: ['skeleton'] }
+			themes: { preset: ['wintry'] }
 		})
 	]
 } satisfies Config;

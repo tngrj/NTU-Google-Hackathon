@@ -1,8 +1,9 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar, Toast, initializeStores, Modal } from '@skeletonlabs/skeleton';
+	import { AppShell, Toast, initializeStores, Modal, AppBar } from '@skeletonlabs/skeleton';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+	import { Target } from 'lucide-svelte';
 
 	initializeStores();
 
@@ -14,12 +15,18 @@
 
 <Toast />
 <Modal />
-<!-- App Shell -->
-<AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64">
-	<svelte:fragment slot="header" />
 
-	<svelte:fragment slot="sidebarLeft" />
+<AppShell>
+	<svelte:fragment slot="header"
+		><AppBar>
+			<svelte:fragment slot="lead">
+				<a href="/"><Target size={48} /></a>
+			</svelte:fragment>
+			<h3 class="h3">RetrenchGoWhere</h3>
+		</AppBar></svelte:fragment
+	>
 
-	<!-- Page Route Content -->
-	<div class="container mx-auto"><slot /></div>
+	<div class="container mx-auto">
+		<slot />
+	</div>
 </AppShell>

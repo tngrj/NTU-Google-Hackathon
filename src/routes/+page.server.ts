@@ -13,6 +13,15 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
+	searchJobs: async ({ request, params }) => {
+		const data = await request.formData();
+		const jobTitle = data.get('jobTitle');
+		const file = data.get('files');
+
+		console.log('jobTitle:', jobTitle);
+		console.log('file:', file);
+		// return { jobTitle, file };
+	},
 	signOut: async (event) => {
 		if (!event.locals.session) {
 			return fail(401);

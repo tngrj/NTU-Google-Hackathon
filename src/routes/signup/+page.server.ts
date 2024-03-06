@@ -13,8 +13,9 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
-	default: async (event) => {
+	createUser: async (event) => {
 		const formData = await event.request.formData();
+		const name = formData.get('name');
 		const email = formData.get('email');
 		const password = formData.get('password');
 
@@ -47,6 +48,7 @@ export const actions: Actions = {
 		} else {
 			const newUser = await prisma.user.create({
 				data: {
+					name: name,
 					email: email,
 					password: hashedPassword
 				}
