@@ -15,7 +15,9 @@
 			</div>
 		</div>
 		<br />
-		<a href="/course/{course.referenceNumber}">
+		<a
+			href={`https://www.myskillsfuture.gov.sg/content/portal/en/training-exchange/course-directory/course-detail.html?courseReferenceNumber=${course.referenceNumber}`}
+		>
 			<span class="chip variant-filled-tertiary">More info</span>
 		</a>
 	</div>

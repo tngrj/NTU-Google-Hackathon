@@ -2,6 +2,7 @@ import { lucia } from '$lib/server/auth';
 import { fail, redirect } from '@sveltejs/kit';
 
 import type { Actions, PageServerLoad } from './$types';
+import { generateContent } from '../api/gemini';
 
 export const load: PageServerLoad = async (event) => {
 	// if (!event.locals.user) {
@@ -20,7 +21,8 @@ export const actions: Actions = {
 
 		console.log('jobTitle:', jobTitle);
 		console.log('file:', file);
-		// return { jobTitle, file };
+
+		generateContent(jobTitle, file);
 	},
 	signOut: async (event) => {
 		if (!event.locals.session) {

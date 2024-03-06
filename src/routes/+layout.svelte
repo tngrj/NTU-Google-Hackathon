@@ -20,9 +20,13 @@
 	<svelte:fragment slot="header"
 		><AppBar>
 			<svelte:fragment slot="lead">
-				<a href="/"><Target size={48} /></a>
+				<a href="/">
+					<div class="flex flex-row items-center">
+						<Target size={48} />
+						<h3 class="h3 ml-2">RetrenchGoWhere</h3>
+					</div>
+				</a>
 			</svelte:fragment>
-			<h3 class="h3">RetrenchGoWhere</h3>
 		</AppBar></svelte:fragment
 	>
 

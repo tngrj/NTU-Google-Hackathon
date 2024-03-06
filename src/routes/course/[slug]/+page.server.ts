@@ -12,7 +12,7 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 	}
 
 	const response = await fetch(
-		`https://public-api.ssg-wsg.sg/courses/directory?pageSize=10&page=5&keyword=${params.slug}`,
+		`https://public-api.ssg-wsg.sg/courses/directory?pageSize=10&page=1&keyword=${params.slug}`,
 		{
 			headers: {
 				Authorization: `Bearer ${accessToken}`
