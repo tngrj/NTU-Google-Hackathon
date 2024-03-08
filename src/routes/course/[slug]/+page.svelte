@@ -15,6 +15,8 @@
 	<li class="crumb"><a class="anchor" href="/course">Courses</a></li>
 </ol>
 
-{#each courses as course, index (index)}
-	<Course {course} />
-{/each}
+<div class="mx-auto w-2/3">
+	{#each courses as course, index (index)}
+		<Course {course} />
+	{/each}
+</div>

@@ -17,6 +17,7 @@
 		<br />
 		<a
 			href={`https://www.myskillsfuture.gov.sg/content/portal/en/training-exchange/course-directory/course-detail.html?courseReferenceNumber=${course.referenceNumber}`}
+			target="_blank"
 		>
 			<span class="chip variant-filled-tertiary">More info</span>
 		</a>
