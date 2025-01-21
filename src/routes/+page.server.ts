@@ -1,19 +1,8 @@
-import { lucia } from '$lib/server/auth';
-import { fail, redirect } from '@sveltejs/kit';
-
-import type { Actions, PageServerLoad } from './$types';
+import { redirect } from '@sveltejs/kit';
+import type { Actions } from './$types';
 import { generateContent } from '../api/gemini';
 import { jobStore } from '$lib/store/job';
 import { callCloudFunction } from '../api/cloud';
-
-export const load: PageServerLoad = async (event) => {
-	// if (!event.locals.user) {
-	// 	throw redirect(302, '/login');
-	// }
-	// return {
-	// 	user: event.locals.user
-	// };
-};
 
 export const actions: Actions = {
 	searchJobs: async ({ request }) => {
@@ -56,19 +45,5 @@ export const actions: Actions = {
 		jobStore.set(allJobs);
 		// console.log('allJobs:', allJobs);
 		throw redirect(302, '/job');
-	},
-	signOut: async (event) => {
-		if (!event.locals.session) {
-			return fail(401);
-		}
-		await lucia.invalidateSession(event.locals.session.id);
-		const sessionCookie = lucia.createBlankSessionCookie();
-		event.cookies.set(sessionCookie.name, sessionCookie.value, {
-			path: '.',
-			...sessionCookie.attributes
-		});
-
-		console.log('Successfuly Signed Out!');
-		throw redirect(302, '/login');
 	}
 };

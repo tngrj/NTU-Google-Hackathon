@@ -8,9 +8,6 @@
 	initializeStores();
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
-
-	export let data;
-	let userRole = data.user;
 </script>
 
 <Toast />

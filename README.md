@@ -6,25 +6,11 @@
 
 ## Project Setup
 
-### Download PostgreSQL
-
-Download [`PostgreSQL`](https://www.postgresql.org/download/).
-
-After downloading, access PostgreSQL through terminal using `psql -U postgres`.
-
-Create a new Database using the command `CREATE DATABASE database_name;`. Replace `database_name` with the name of your database.
-
 ### Install packages
 
 Install the necessary packages using one of the following commands:
 
 `npm install` or `pnpm install`
-
-### Generate Prisma
-
-Once you've installed all dependencies, generate Prisma client using:
-
-`npx prisma generate` or `pnpm dlx prisma generate`
 
 ### Google Cloud SDK Setup
 
@@ -40,7 +26,6 @@ Run `gcloud auth application-default login` to authenticate yourself and prevent
 
 The following environment variables are required to run the project:
 
-- `DATABASE_URL`: The URL for your PostgreSQL database.
 - `CLIENT_ID` & `CLIENT_SECRET`: Obtained from [`MySkillsFuture API`](https://developer.ssg-wsg.gov.sg)for authentication.
 - `PROJECT_ID`: The project ID for the Google Cloud project.
 - `LOCATION`: The location for the Google Cloud project.
@@ -56,6 +41,6 @@ To start the development server:
 
 To create a production version of the app:
 
-`npm run build`
+`npm run build` or `pnpm run build`
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `npm run preview` or `pnpm run preview`.

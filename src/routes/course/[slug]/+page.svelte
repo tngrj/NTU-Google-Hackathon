@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from '../$types';
+	import type { PageData } from './$types';
 	import Course from '$lib/components/course.svelte';
 
 	export let data: PageData;
